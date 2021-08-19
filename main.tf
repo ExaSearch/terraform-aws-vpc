@@ -217,7 +217,7 @@ resource "aws_route" "public_internet_gateway" {
   gateway_id             = aws_internet_gateway.this[0].id
 
   timeouts {
-    create = "5m"
+    create = "15m"
   }
 }
 
@@ -282,7 +282,7 @@ resource "aws_route" "database_internet_gateway" {
   gateway_id             = aws_internet_gateway.this[0].id
 
   timeouts {
-    create = "5m"
+    create = "15m"
   }
 }
 
@@ -294,7 +294,7 @@ resource "aws_route" "database_nat_gateway" {
   nat_gateway_id         = element(aws_nat_gateway.this.*.id, count.index)
 
   timeouts {
-    create = "5m"
+    create = "15m"
   }
 }
 
@@ -306,7 +306,7 @@ resource "aws_route" "database_ipv6_egress" {
   egress_only_gateway_id      = aws_egress_only_internet_gateway.this[0].id
 
   timeouts {
-    create = "5m"
+    create = "15m"
   }
 }
 
@@ -1115,7 +1115,7 @@ resource "aws_route" "private_nat_gateway" {
   nat_gateway_id         = element(aws_nat_gateway.this.*.id, count.index)
 
   timeouts {
-    create = "5m"
+    create = "15m"
   }
 }
 
